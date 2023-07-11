@@ -1,20 +1,93 @@
 * {
   padding: 0;
   margin: 0;
-}
-
-.container-fluid{
-  background-color: grey;
-
-}
-
-
-
-body {
-  background-color: plum;
   
 }
+
+.container-fluid {
+  background-color: grey;
+}
+
+ body {
+  padding: 8px;
+  margin: 8px ;
+  display: block;
+  
+} 
+
+
+
 .login-form {
   width: 500px;
   margin: 50px auto;
 }
+ 
+
+.container {
+  max-width: 400px;
+  margin: 8px auto;
+  padding: 20px;
+  background-color: grey;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+button
+ {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: navajowhite;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background-color: #45a049;
+}
+
+.user-image{
+  width: 500px;
+  border-radius: 5px;
+  size: 50cm;
+  height: 500px;
+}
+
+
+.ground{
+  background-image: url('/public/images/back.jpg');
+  height: 100vh;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+
