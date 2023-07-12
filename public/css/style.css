@@ -32,8 +32,13 @@
   border-radius: 5px;
 }
 
-h2 {
+
+
+h1{
   text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .form-group {
@@ -90,4 +95,91 @@ input[type="button"]:hover {
   background-position: center;
 }
 
+.parking{
+  width:50px;
+  height: 50%;
+  border-radius: 5px;
+  padding: 0px;
+
+  
+}
+
+.clinic{
+  width: 5px;
+  height: 10%;
+  border-radius: 5px;
+  padding: 0px;
+}
+
+
+.battery{
+  width: 5px;
+  height: 10%;
+  border-radius: 5px;
+  padding: 0px;
+
+}
+
+.services{
+  padding: 0;
+  margin: 2px;
+  background-color: plum;
+}
+
+
+.booking{
+  max-width: 400px;
+  margin: 8px auto;
+  padding: 20px;
+  background-color: grey;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+
+.model{
+  padding: 0;
+  margin: 0;
+  width: 500px;
+  height: 100px;
+  background-color: grey;
+}
+
+.car-number{
+  padding: 0;
+  margin: 0;
+  width: 500px;
+  height: 100px;
+  background-color: grey;
+
+}
+
+.car-color{
+  padding: 0;
+  margin: 0;
+  width: 500px;
+  height: 100px;
+  background-color: grey;
+}
+
+.date{
+  padding: 0;
+  margin: 0;
+  width: 500px;
+  height: 100px;
+  background-color: grey;
+}
+
+.time{
+  padding: 0;
+  margin: 0;
+  width: 500px;
+  height: 100px;
+  background-color: grey;
+
+}
+
+
+                                   
 
