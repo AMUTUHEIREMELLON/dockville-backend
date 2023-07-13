@@ -6,25 +6,30 @@
   </head>
   <body>
     <div class="container">
-      <form id="formId" name="register" action="#" onsubmit="return Validate();" method="POST">
+      <form
+        id="formId"
+        name="register"
+        action="#"
+        onsubmit="return Validate();"
+        method="POST"
+      >
         <h1>Sign Up Form</h1>
-       
+
         <div class="form-group">
           <label for="firstname">Firstname:</label>
-          <input type="text" id="firstname" name="firstname"/>
+          <input type="text" id="firstname" name="firstname" />
           <!-- all inputs should have names in lowercase -->
           <span id="firstnameError"></span>
-
         </div>
         <div class="form-group">
           <label for="lastname">Lastname:</label>
-          <input type="text" id="lastname" name="lastname"/>
+          <input type="text" id="lastname" name="lastname" />
           <!-- all inputs should have names in lowercase -->
           <span id="lastnameError"></span>
         </div>
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email"/>
+          <input type="email" id="email" name="email" />
           <span id="pnameError"></span>
         </div>
         <div class="form-group">
@@ -37,22 +42,24 @@
           <span id="qnameError"></span>
         </div>
         <div class="form-group">
-          <label for="national-id">National ID Number:</label>
-          <input type="text" id="national-id" name="national-id"/>
+          <label for="nin">NIN</label>
+          <input type="text" name="ninname" id="nin" />
+          <span  id="ninError"></span>
+          
         </div>
         <div class="form-group">
           <label for="carnumberplate">Car Number Plate:</label>
-          <input type="text" id="carnumberplate" name="carnumberplate"/>
+          <input type="text" id="carnumberplate" name="carnumberplate" />
           <span id="gnameError"></span>
         </div>
         <div class="form-group">
           <label for="phonenumber">Phone Number:</label>
-          <input type="tel" id="phonenumber" name="phonenumber"/>
+          <input type="tel" id="phonenumber" name="phonenumber" />
           <span id="hnameError"></span>
         </div>
         <div class="form-group">
           <label for="password">Create Password:</label>
-          <input type="password" id="password" name="password"/>
+          <input type="password" id="password" name="password" />
         </div>
         <div class="form-group">
           <label for="confirm-password">Confirm Password:</label>
@@ -60,12 +67,15 @@
             type="password"
             id="confirm-password"
             name="confirm-password"
-            
-            />
+          />
         </div>
         <div class="form-group">
-          <button type="submit"  >Sign Up</button>
+          <button type="submit">Sign Up</button>
           <!-- <input type="button" value="Login" /> -->
+          <!-- <div class="form-group">
+          <label for="national-id">National ID Number:</label>
+          <input type="text" id="national-id" name="national-id"/>
+        </div> -->
         </div>
       </form>
     </div>
