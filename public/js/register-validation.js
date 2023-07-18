@@ -5,9 +5,10 @@ const Validate = () => {
   let phoneNumber = document.register.phonenumber;
   let email = document.register.email;
   let carNumberPlate = document.register.carnumberplate;
-  
+  let password = document.register.password;
   let sex = document.register.sex;
   let NIN = document.register.ninname;
+  let cPassword = document.register.confirm - password;
 
   // //   // picking error fields
   let firstNameError = document.getElementById("firstnameError");
@@ -17,6 +18,8 @@ const Validate = () => {
   let phoneNumberError = document.getElementById("phonenumberError");
   let sexError = document.getElementById("qnameError");
   let ninError = document.getElementById("ninError");
+  let passwordError = document.getElementById("passwordError");
+  let cPasswordError = document.getElementById("cnameError");
 
   // //   // validating  firstname input
   // //   // validating for emptiness
@@ -42,16 +45,11 @@ const Validate = () => {
       "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
     firstName.focus();
     return false;
-    
-  }
-  
-  else {
+  } else {
     firstName.style.border = "2px solid green";
     firstNameError.textContent = "";
     lastName.focus();
   }
-
-
 
   // Validating the last name
 
@@ -83,7 +81,6 @@ const Validate = () => {
     phoneNumber.focus();
   }
 
-
   // //   // validating phone number
   // let phoneRegex = /^[+][2][5][6][0-9]{9}$;/;
   let phoneRegex = /^\+256\d{9}$/;
@@ -95,18 +92,17 @@ const Validate = () => {
       "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
     phoneNumber.focus();
     return false;
-  }else if (!phoneRegex.test(phoneNumber.value)) {
+  } else if (!phoneRegex.test(phoneNumber.value)) {
     phoneNumber.style.border = "1px solid red";
     phoneNumberError.textContent = "Phone number should start with +256";
     phoneNumberError.style =
       "color: red; font-size:11px; font-family:helvetica,Arial,sans-serif;";
     phoneNumber.focus();
     return false;
-  }
-  else{
-     phoneNumber.style.border = "1px solid green";
-     phoneNumberError.textContent = "";
-     email.focus();
+  } else {
+    phoneNumber.style.border = "1px solid green";
+    phoneNumberError.textContent = "";
+    email.focus();
   }
 
   //   // validation for Email
@@ -128,49 +124,87 @@ const Validate = () => {
       "color: red; font-size:11px; font-family:helvetica,Arial,sans-serif;";
     email.focus();
     return false;
-  }
-  else {
+  } else {
     email.style.border = "1px solid green";
     emailError.textContent = "";
-    NIN.focus();
+    password.focus();
   }
 
-    // validate NIN
-//     if (NIN.value == "") {
-//       NIN.style.border = "1px solid red";
-//       ninError.textContent = "NIN is required";
-//       ninError.style =
-//         "color: red; font-size:11px; font-family:helvetica,Arial,sans-serif;";
-//       NIN.focus();
-//       return false;
-//     }
-//     let ninRegex = /^CF([a-zA-Z0-9]{12}+$)/;
+  // Validating password
+  if (password.value == "") {
+    password.style.border = "1px solid red";
+    passwordError.textContent = "Password is required";
+    passwordError.style =
+      "color: red; font-size:11px; font-family:helvetica,Arial,sans-serif;";
+    password.focus();
+    return false;
+  }
+  if (password.value.length < 8) {
+    password.style.border = "1px solid red";
+    passwordError.textContent = "Password must be at least 8 characters";
+    passwordError.style =
+      "color: red; font-size:11px; font-family:helvetica,Arial,sans-serif;";
+    password.focus();
+    return false;
+  } else {
+    password.style.border = "1px solid green";
+    passwordError.textContent = "";
+    cPassword.focus();
+  }
 
-//     if (!NIN.value.match(ninRegex)) {
-//       NIN.style.border = "1px solid red";
-//       ninError.textContent = "NIN should be valid";
-//       ninError.style =
-//         "color: red; font-size:11px; font-family:helvetica,Arial,sans-serif;";
-//       NIN.focus();
-//       return false;
-//     }
+  // validating the confirm password
+  
 
-//     if (NIN.value == "") {
-//       NIN.style.border = "1px solid red";
-//       ninError.textContent = "NIN is required";
-//       ninError.style =
-//         "color: red; font-size:11px; font-family:helvetica,Arial,sans-serif;";
-//       NIN.focus();
-//       return false;
-//     }
-//     let ninRegex2 = /^CM([a-zA-Z0-9]{12}+$)/;
+  // All validations passed
+  
 
-//     if (!NIN.value.match(ninRegex)) {
-//       NIN.style.border = "1px solid red";
-//       ninError.textContent = "NIN should be valid";
-//       ninError.style =
-//         "color: red; font-size:11px; font-family:helvetica,Arial,sans-serif;";
-//       NIN.focus();
-//       return false;
-//     }
-};
+
+
+
+
+
+
+
+
+
+  
+
+  // validate NIN
+  //     if (NIN.value == "") {
+  //       NIN.style.border = "1px solid red";
+  //       ninError.textContent = "NIN is required";
+  //       ninError.style =
+  //         "color: red; font-size:11px; font-family:helvetica,Arial,sans-serif;";
+  //       NIN.focus();
+  //       return false;
+  //     }
+  //     let ninRegex = /^CF([a-zA-Z0-9]{12}+$)/;
+
+  //     if (!NIN.value.match(ninRegex)) {
+  //       NIN.style.border = "1px solid red";
+  //       ninError.textContent = "NIN should be valid";
+  //       ninError.style =
+  //         "color: red; font-size:11px; font-family:helvetica,Arial,sans-serif;";
+  //       NIN.focus();
+  //       return false;
+  //     }
+
+  //     if (NIN.value == "") {
+  //       NIN.style.border = "1px solid red";
+  //       ninError.textContent = "NIN is required";
+  //       ninError.style =
+  //         "color: red; font-size:11px; font-family:helvetica,Arial,sans-serif;";
+  //       NIN.focus();
+  //       return false;
+  //     }
+  //     let ninRegex2 = /^CM([a-zA-Z0-9]{12}+$)/;
+
+  //     if (!NIN.value.match(ninRegex)) {
+  //       NIN.style.border = "1px solid red";
+  //       ninError.textContent = "NIN should be valid";
+  //       ninError.style =
+  //         "color: red; font-size:11px; font-family:helvetica,Arial,sans-serif;";
+  //       NIN.focus();
+  //       return false;
+      
+}

@@ -43,6 +43,7 @@ h1{
 
 .form-group {
   margin-bottom: 15px;
+  /* width: 500px; */
 }
 
 label {
@@ -127,14 +128,7 @@ body{
 }
  */
 
-.booking{
-  max-width: 400px;
-  margin: 8px auto;
-  padding: 20px;
-  background-color: grey;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+
 
 
 
