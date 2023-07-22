@@ -40,7 +40,7 @@ const Validate = () => {
   } else if (firstName.value.length > 15) {
     firstName.style.border = "2px solid red";
     firstNameError.textContent =
-      "first name must not be greate than 15 characters";
+      "first name must not be greater than 15 characters";
     firstNameError.style =
       "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
     firstName.focus();
