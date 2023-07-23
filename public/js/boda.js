@@ -7,6 +7,7 @@ const Validate = () => {
   let date = document.boda.date;
   let time = document.boda.time;
   let slotnumber = document.boda.slotnumber;
+  let nin = document.boda.nin;
 
   let firstNameError = document.getElementById("firstnameError");
   let lastNameError = document.getElementById("lastnameError");
@@ -16,6 +17,7 @@ const Validate = () => {
   let dateError = document.getElementById("dateError");
   let timeError = document.getElementById("timeError");
   let slotnumberError = document.getElementById("slotnumberError");
+  let ninError = document.getElementById("ninError");
 
   if (firstName.value == "") {
     firstName.style.border = "2px solid red";
@@ -180,5 +182,27 @@ const Validate = () => {
       "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
     slotnumber.focus();
     return false;
+  }
+
+  const ninRegex = /^CF([a-zA-Z0-9]{12})+$/;
+  const ninRegex2 = /^CM([a-zA-Z0-9]{12})+$/;
+
+  if (nin.value == "") {
+    nin.style.border = "1px solid red";
+    ninError.textContent = "NIN is required";
+    ninError.style =
+      "color: red; font-size:11px; font-family:helvetica,Arial,sans-serif;";
+    nin.focus();
+    return false;
+  } else if (!(ninRegex.test(nin.value) || ninRegex2.test(nin.value))) {
+    nin.style.border = "1px solid red";
+    ninError.textContent = "NIN should look like CFXXXXXXX or CMXXXXXXX";
+    ninError.style =
+      "color: red; font-size:11px; font-family:helvetica,Arial,sans-serif;";
+    nin.focus();
+    return false;
+  } else {
+    nin.style.border = "1px solid green";
+    ninError.textContent = "";
   }
 };
