@@ -1,0 +1,91 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='./public/css/receipt.css')
+  title Document
+#invoice-POS.receipt
+  // <center id="top">
+  .logo
+  .info
+    h2 DOCKVILLE DAY AND NIGHT PARKING
+  // </center>
+  // End InvoiceTop
+  #mid
+    .info
+      h2 Contact Info
+      p
+        | Address : street city, state 0000 Email : dockville3@gmail.com Phone
+        | : +256784390234
+  // End Invoice Mid
+  #bot
+    #table
+      table
+        tr.tabletitle
+          td.item
+            h2 Item
+          td.Hours
+            h2 Qty/Size
+          td.Rate
+            h2 Amount
+          td.time
+            h2 Duration
+        tr.service
+          td.tableitem
+            p.itemtext Car parking
+          td.tableitem
+            p.itemtext 01
+          td.tableitem
+            p.itemtext 5000
+          td.tableitem
+            p.itemtext Day and night
+        tr.service
+          td.tableitem
+            p.itemtext Battery
+          td.tableitem
+            p.itemtext medium
+          td.tableitem
+            p.itemtext 5000
+          td.tableitem
+            // <p class="itemtext">5000</p>
+        tr.service
+          td.tableitem
+            p.itemtext Puncture
+          td.tableitem
+            p.itemtext 02
+          td.tableitem
+            p.itemtext 10000
+          td.tableitem
+            // <p class="itemtext">10000</p>
+        tr.service
+          td.tableitem
+            p.itemtext Truck
+          td.tableitem
+            p.itemtext 01
+          td.tableitem
+            p.itemtext 3000
+          td.tableitem
+            p.itemtext Day
+        tr.service
+          td.tableitem
+            p.itemtext Valves
+          td.tableitem
+            p.itemtext 10
+          td.tableitem
+            p.itemtext 50000
+          td.tableitem
+            // <p class="itemtext">50000</p>
+        tr.tabletitle
+          td
+          td.Rate
+            h2 Total(Shs)
+          td.payment
+            h2 73000
+          td.payment
+    // End Table
+    #legalcopy
+      p.legal
+        strong Thank you for parking with us
+        | . We look forward toseeing you next time.
+  // End InvoiceBot
+// End Invoice

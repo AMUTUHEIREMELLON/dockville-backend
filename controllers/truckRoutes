@@ -1,0 +1,10 @@
+const express = require("express");
+const router = express.Router();
+
+
+router.get("/truck",(req, res) =>{
+  res.render("truck.pug")
+});
+
+
+module.exports = router;

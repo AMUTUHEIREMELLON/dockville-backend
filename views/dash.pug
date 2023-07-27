@@ -1,0 +1,242 @@
+doctype html
+// Coding by CodingNepal | www.codingnepalweb.com
+head
+  meta(charset='UTF-8')
+  title Responsiive Admin Dashboard | CodingLab
+  link(rel='stylesheet' href='public/css/dash.css')
+  // Boxicons CDN Link
+  link(href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+.sidebar
+  .logo-details
+    i.bx.bxl-c-plus-plus
+    span.logo_name DOCKVILLE
+  ul.nav-links
+    li
+      a.active(href='#')
+        i.bx.bx-grid-alt
+        span.links_name Dashboard
+    li
+      a(href='#')
+        i.bx.bx-box
+        span.links_name Product
+    li
+      a(href='#')
+        i.bx.bx-list-ul
+        span.links_name Order list
+    li
+      a(href='#')
+        i.bx.bx-pie-chart-alt-2
+        span.links_name Analytics
+    li
+      a(href='#')
+        i.bx.bx-coin-stack
+        span.links_name Slots availabe
+    li
+      a(href='#')
+        i.bx.bx-book-alt
+        span.links_name Total order
+    li
+      a(href='#')
+        i.bx.bx-user
+        span.links_name Team
+    li
+      a(href='#')
+        i.bx.bx-message
+        span.links_name Messages
+    li
+      a(href='#')
+        i.bx.bx-heart
+        span.links_name Favrorites
+    li
+      a(href='#')
+        i.bx.bx-cog
+        span.links_name Setting
+    li.log_out
+      a(href='#')
+        i.bx.bx-log-out
+        span.links_name Log out
+section.home-section
+  nav
+    .sidebar-button
+      i.bx.bx-menu.sidebarBtn
+      span.dashboard Dashboard
+    .search-box
+      input(type='text' placeholder='Search...')
+      i.bx.bx-search
+    .profile-details
+      img(src='public/images/mln.jpg' alt='')
+      span.admin_name Mellon Amullon
+      i.bx.bx-chevron-down
+  .home-content
+    .overview-boxes
+      .box
+        .right-side
+          .box-topic Total Slots occupied
+          .number 176
+          .indicator
+            i.bx.bx-up-arrow-alt
+            span.text From morning
+        i.bx.bx-cart-alt.cart
+      .box
+        .right-side
+          .box-topic Total income
+          .number Shs3,800
+          .indicator
+            i.bx.bx-up-arrow-alt
+            span.text From morning
+        i.bx.bxs-cart-add.cart.two
+      .box
+        .right-side
+          .box-topic Total Profit
+          .number Shs.800
+          .indicator
+            i.bx.bx-up-arrow-alt
+            span.text From morning
+        i.bx.bx-cart.cart.three
+      .box
+        .right-side
+          .box-topic Total Return
+          .number 11,086
+          .indicator
+            i.bx.bx-down-arrow-alt.down
+            span.text Down From Today
+        i.bx.bxs-cart-download.cart.four
+    .sales-boxes
+      .recent-sales.box
+        .title Recent Sales
+        .sales-details
+          ul.details
+            li.topic Date
+            li
+              a(href='#') 02 June 2023
+            li
+              a(href='#') 02 June 2023
+            li
+              a(href='#') 02 June 2023
+            li
+              a(href='#') 02 June 2023
+            li
+              a(href='#') 02 June 2023
+            li
+              a(href='#') 02 June 2023
+            li
+              a(href='#') 02 June 2023
+            li
+              a(href='#') 02 June 2023
+            li
+              a(href='#') 02 June 2023
+          ul.details
+            li.topic Customer
+            li
+              a(href='#') Amos Opio
+            li
+              a(href='#') David Ariho
+            li
+              a(href='#') Peter Tumwine
+            li
+              a(href='#') Moses Okello
+            li
+              a(href='#') Ronnie Olet
+            li
+              a(href='#') Davis Bamwine
+            li
+              a(href='#') Kevin Turashimye
+            li
+              a(href='#') Martha Okror
+            li
+              a(href='#') Rinah Asere
+          ul.details
+            li.topic Slots
+            li
+              a(href='#') 01
+            li
+              a(href='#') 02
+            li
+              a(href='#') 01
+            li
+              a(href='#') 01
+            li
+              a(href='#') 02
+            li
+              a(href='#') 01
+            li
+              a(href='#') 01
+            li
+              a(href='#') 02
+            li
+              a(href='#') 01
+          ul.details
+            li.topic Total
+            li
+              a(href='#') Shs.204.98
+            li
+              a(href='#') Shs.24.55
+            li
+              a(href='#') Shs.25.88
+            li
+              a(href='#') Shs.170.66
+            li
+              a(href='#') Shs.56.56
+            li
+              a(href='#') Shs.44.95
+            li
+              a(href='#') Shs.67.33
+            li
+              a(href='#') Shs.23.53
+            li
+              a(href='#') Shs.46.52
+        .button
+          a(href='#') See All
+      .top-sales.box
+        .title Other sections
+        ul.top-sales-details
+          li
+            a(href='#')
+              img(src='images/sunglasses.jpg' alt='')
+              span.product  Medium sized tire 
+            span.price Shs.150000
+          li
+            a(href='#')
+              img(src='images/jeans.jpg' alt='')
+              span.product 10Valves
+            span.price Shs.50000
+          li
+            a(href='#')
+              img(src='images/nike.jpg' alt='')
+              span.product 3 puncture fixtures
+            span.price Shs.15000
+          li
+            a(href='#')
+              img(src='images/scarves.jpg' alt='')
+              span.product Hermes Silk Scarves.
+            span.price Shs.2312
+          li
+            a(href='#')
+              img(src='images/blueBag.jpg' alt='')
+              span.product Succi Ladies Bag
+            span.price Shs.1006
+          li
+            a(href='#')
+              img(src='images/bag.jpg' alt='')
+              span.product Gucci Womens&apos;s Bags
+            span.price Shs.2300
+          li
+            a(href='#')
+              img(src='images/addidas.jpg' alt='')
+              span.product Addidas Running Shoe
+            span.price Shs.2300
+          li
+            a(href='#')
+              img(src='images/shirt.jpg' alt='')
+              span.product Bilack Wear&apos;s Shirt
+            span.price Shs.1200
+script.
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".sidebarBtn");
+  sidebarBtn.onclick = function () {
+  sidebar.classList.toggle("active");
+  if (sidebar.classList.contains("active")) {
+  sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+  } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+  };
