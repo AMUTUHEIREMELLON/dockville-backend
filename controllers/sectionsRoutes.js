@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/login",(req, res) => {
-  res.render("login.pug");
+router.get("/sections",(req, res) => {
+  res.render("sections.pug");
 });
+
+
 
 module.exports = router;

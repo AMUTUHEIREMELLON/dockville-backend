@@ -68,82 +68,6 @@ const Validate = () => {
     lastName.style.border = "2px solid green";
     lastNameError.textContent = "";
 
-    model.focus();
-  }
-
-  if (model.value == "") {
-    model.style.border = "2px solid red";
-    modelError.textContent = "please provide your car model";
-    modelError.style =
-      "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
-    model.focus();
-    return false;
-  } else if (model.value.length < 2) {
-    model.style.border = "2px solid red";
-    modelError.textContent = "Model should be atleast 2 characters long";
-    modelError.style =
-      "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
-    model.focus();
-    return false;
-  } else {
-    model.style.border = "2px solid green";
-    modelError.textContent = "";
-    numberPlate.focus();
-  }
-  if (numberPlate.value == "") {
-    numberPlate.style.border = "2px solid red";
-    numberPlateError.textContent = "please provide your car number plate";
-    numberPlateError.style =
-      "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
-    numberPlate.focus();
-    return false;
-  } else if (numberPlate.value.length < 6) {
-    numberPlate.style.border = "1px solid red";
-    numberPlateError.textContent =
-      "Number plate should not be more than 6 characters";
-    numberPlateError.style = "color: red; fontsize:11px; font-size:";
-    numberPlate.focus();
-    return false;
-  } else {
-    numberPlate.style.border = "2px solid green";
-    numberPlateError.textContent = "";
-    color.focus();
-  }
-  // let numberPlateRegex = ^[A-Z]{3}\s[0-9A-Z]{4}$;
-
-  // let numberPlateRegex = ^[A-Z]{3}\s\d{3}$;
-
-  // let numberPlateRegex = /^[A-Z]{2}[ -]\d{3}[ -][A-Z]{3}$/;
-
-  // let numberPlateRegex = ^[A-Z]{3}\s\d{3}[DE]$;
-  // let numberPlateRegex = /^[A-Z]{2,3}\s\d{2,3}$/;
-  // let numberPlateRegex = ^U([A-Z0-9]{6})+$
-  // if (!numberPlate.value.match(numberPlateRegex)) {
-  //   numberPlate.style.border = "2px solid red";
-  //   numberPlateError.textContent = "Please provide a valid car number plate";
-  //   numberPlateError.style =
-  //     "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
-  //   numberPlate.focus();
-  //   return false;
-  // }
-
-  if (color.value == "") {
-    color.style.border = "2px solid red";
-    colorError.textContent = "please provide your car color";
-    colorError.style =
-      "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
-    color.focus();
-    return false;
-  } else if (color.value.length < 2) {
-    color.style.border = "2px solid red";
-    colorError.textContent = "Color should be atleast 2 characters long";
-    colorError.style =
-      "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
-    color.focus();
-    return false;
-  } else {
-    color.style.border = "2px solid green";
-    colorError.textContent = "";
     date.focus();
   }
 
@@ -167,12 +91,10 @@ const Validate = () => {
       "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
     time.focus();
     return false;
-
-  }else{
+  } else {
     time.style.border = "2px solid green";
     timeError.textContent = "";
     slotnumber.focus();
-
   }
 
   if (slotnumber.value == "") {

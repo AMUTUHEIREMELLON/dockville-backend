@@ -1,5 +1,9 @@
 const express = require("express");
 const path = require("path");
+const dotenv = require("dotenv").config();
+const connectdb = require("./config/dbConfig");
+const port = process.env.PORT || 3000;
+
 const app = express();
 
 // importing bodaRoutes
@@ -13,6 +17,15 @@ const receiptRoutes = require("./controllers/receiptRoutes");
 const taxiRoutes = require("./controllers/taxiRoutes");
 const truckRoutes = require("./controllers/truckRoutes");
 const sectionsRoutes = require("./controllers/sectionsRoutes");
+
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+
+
+
+connectdb();
+
+
 
 
 
@@ -36,10 +49,10 @@ app.use("/api", taxiRoutes);
 app.use("/api", truckRoutes);
 app.use("/api", sectionsRoutes);
 
-
-
-
-
 // running the server on a spefic port
 // this should be the last line in the server line
-app.listen(3000, () => console.log("listening on port 3000"));
+
+app.listen(port, () =>
+  console.log(`server is running at http://localhost:${port}`)
+);
+

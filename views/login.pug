@@ -37,7 +37,7 @@ head
           button.btn.btn-outline-success(type='submit')
             | Search
   .login-form
-    form#formId(name='login' action='#' onsubmit='return Validate()' method='POST')
+    form#formId(name='login' action='/api/reglogin' onsubmit='return Validate()' method='POST')
       .mb-3
         label(for='email') Email address
         input#email.form-control(type='email' name='email')
