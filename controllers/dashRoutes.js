@@ -1,7 +1,10 @@
 const express = require("express");
 const router = express.Router();
+const { ensureLoggedIn } = require("connect-ensure-login");
 
-router.get("/dash",(req, res) => {
+
+
+router.get("/dash", ensureLoggedIn("/api/login"), (req, res) => {
   res.render("dash.pug");
 });
 

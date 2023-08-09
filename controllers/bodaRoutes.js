@@ -52,4 +52,16 @@ router.get("/boda/edit/:id", async (req, res) => {
   }
 });
 
+router.post("/regboda/edit", async (req, res) => {
+  try{
+    await Boda.findOneAndUpdate({_id: req.query.id},req.body);
+    res.redirect("/api/list")
+  }
+  catch(error){
+    res.status(400).send("Could not find boda data");
+    console.log(error);
+  }
+});
+
+
 module.exports = router;

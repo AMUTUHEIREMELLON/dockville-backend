@@ -7,7 +7,7 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
 .booking
   h3 Bodaboda
-  form#formId(name='boda' action='/api/regboda' onsubmit='return Validate()' method='POST')
+  form#formId(name='boda' action='/api/regboda/edit?id='+boda._id onsubmit='return Validate()' method='POST')
     .row
       .col
         input#firstname.form-control(type='text' placeholder='First name' name='firstname' value=boda.firstname)

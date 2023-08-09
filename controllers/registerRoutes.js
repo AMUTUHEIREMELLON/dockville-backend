@@ -3,7 +3,7 @@ const Register = require("../models/registerModel");
 
 const router = express.Router();
 
-router.get("/register", (req, res) => {
+router.get("/registerlist", (req, res) => {
   res.render("register.pug");
 });
 

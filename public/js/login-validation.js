@@ -10,7 +10,7 @@ const Validate = () => {
 
   if (email.value == "") {
     email.style.border = "2px solid red";
-    emailError.textContent = "Email `is required";
+    emailError.textContent = "Email is required";
     emailError.style =
       "color: red; font-size:11px; font-faxmily:helvetica,Arial,sans-serif;";
     email.focus();

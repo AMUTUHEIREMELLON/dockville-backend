@@ -13,10 +13,19 @@ body{
 }
 
 body{
-  background-image: url('/images/spla.avif');
+  background-image: url('/public/images/spla.avif');
   height: 100vh;
   background-repeat: no-repeat;
   width: 100%;
   background-size: cover;
   background-position: center;
+}
+
+.container-fluid img {
+  height:70px;
+  width: 70px;
+}
+
+.dockv{
+  font-weight: bold;
 }

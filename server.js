@@ -1,12 +1,14 @@
 const express = require("express");
 const path = require("path");
 const dotenv = require("dotenv").config();
+const passport = require("passport");
 const connectdb = require("./config/dbConfig");
 const port = process.env.PORT || 3000;
 
 const app = express();
 
 // importing bodaRoutes
+const Admin = require("./models/adminModel");
 const bodaRoutes = require("./controllers/bodaRoutes");
 const indexRoutes = require("./controllers/indexRoutes");
 const loginRoutes = require("./controllers/loginRoutes");
@@ -17,6 +19,19 @@ const receiptRoutes = require("./controllers/receiptRoutes");
 const taxiRoutes = require("./controllers/taxiRoutes");
 const truckRoutes = require("./controllers/truckRoutes");
 const sectionsRoutes = require("./controllers/sectionsRoutes");
+const coasterRoutes = require("./controllers/coasterRoutes");
+const clinicRoutes = require("./controllers/clinicRoutes");
+const adminRoutes = require("./controllers/adminRoutes");
+const dashRoutes = require("./controllers/dashRoutes");
+
+// importing the express session
+const expressSession = require("express-session")({
+  secret: "secret",
+  resave: false,
+  saveUnitialised: false,
+});
+
+
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
@@ -34,6 +49,17 @@ app.engine("pug", require("pug").__express);
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
+
+
+app.use(expressSession);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(Admin.createStrategy());
+passport.serializeUser(Admin.serializeUser());
+passport.deserializeUser(Admin.deserializeUser());
+
 // setting up directory for static files
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -48,7 +74,10 @@ app.use("/api", receiptRoutes);
 app.use("/api", taxiRoutes);
 app.use("/api", truckRoutes);
 app.use("/api", sectionsRoutes);
-
+app.use("/api", coasterRoutes);
+app.use("/api", clinicRoutes);
+app.use("/api", adminRoutes);
+app.use("/api", dashRoutes);
 // running the server on a spefic port
 // this should be the last line in the server line
 

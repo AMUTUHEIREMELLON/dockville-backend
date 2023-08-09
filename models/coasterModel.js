@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const carSchema = new mongoose.Schema({
+const coasterSchema = new mongoose.Schema({
   firstname: {
     type: String,
     required: true,
@@ -32,4 +32,4 @@ const carSchema = new mongoose.Schema({
 
 });
 
-module.exports = mongoose.model("car", carSchema);
+module.exports = mongoose.model("coaster", coasterSchema);
