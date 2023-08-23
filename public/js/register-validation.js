@@ -25,7 +25,7 @@ const Validate = () => {
   // //   // validating for emptiness
   if (firstName.value == "") {
     firstName.style.border = "2px solid red";
-    firstNameError.textContent = "please provide your firstname";
+    firstNameError.textContent = "First name is required";
     firstNameError.style =
       "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
     firstName.focus();
@@ -37,10 +37,10 @@ const Validate = () => {
       "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
     firstName.focus();
     return false;
-  } else if (firstName.value.length > 15) {
+  } else if (firstName.value.length > 20) {
     firstName.style.border = "2px solid red";
     firstNameError.textContent =
-      "first name must not be greater than 15 characters";
+      "first name must not be greater than 20 characters";
     firstNameError.style =
       "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
     firstName.focus();

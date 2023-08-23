@@ -18,15 +18,18 @@ head
       label#inputGroup-sizing-sm.model(for='model') Car Model
       span#modelError
       input#model.form-control(type='text' name='model')
-    label.form-label(for='input5') Car tire services
-    .form-check
-      input#flexCheck.form-check-input(type='checkbox' )
-      label.form-check-label(for='flexCheck')
-        | Tire pressure(Shs.500)
-    .form-check
-      input#flexCheck.form-check-input(type='checkbox' )
-      label.form-check-label(for='flexCheck')
-        | Punctuure fixing(Shs.5000)
+    .col-md-6
+    label.form-label(for='duration') Duration
+    select(name='duration')  
+      option(value='') Select Duration
+      option(value='day') Day 
+      option(value='jinja') Jinja 
+      option(value='mukono') Mukono
+    //- Car tire services
+    
+        //- | Tire pressure(Shs.500)
+    
+        //- | Punctuure fixing(Shs.5000)
     .form-check
       input#flexCheck.form-check-input(type='checkbox' )
       label.form-check-label(for='flexCheck')

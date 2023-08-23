@@ -20,9 +20,10 @@ const taxiRoutes = require("./controllers/taxiRoutes");
 const truckRoutes = require("./controllers/truckRoutes");
 const sectionsRoutes = require("./controllers/sectionsRoutes");
 const coasterRoutes = require("./controllers/coasterRoutes");
-const clinicRoutes = require("./controllers/clinicRoutes");
+const tyreRoutes = require("./controllers/tyreRoutes");
 const adminRoutes = require("./controllers/adminRoutes");
 const dashRoutes = require("./controllers/dashRoutes");
+const batteryRoutes = require("./controllers/batteryRoutes");
 
 // importing the express session
 const expressSession = require("express-session")({
@@ -75,9 +76,10 @@ app.use("/api", taxiRoutes);
 app.use("/api", truckRoutes);
 app.use("/api", sectionsRoutes);
 app.use("/api", coasterRoutes);
-app.use("/api", clinicRoutes);
+app.use("/api", tyreRoutes);
 app.use("/api", adminRoutes);
 app.use("/api", dashRoutes);
+app.use("/api", batteryRoutes);
 // running the server on a spefic port
 // this should be the last line in the server line
 

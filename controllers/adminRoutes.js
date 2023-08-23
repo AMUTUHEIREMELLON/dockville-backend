@@ -16,7 +16,7 @@ router.post('/register', async (req, res) => {
     res.redirect("/api/admin");
   }
   catch(error){
-    res.status(400).send({message: "Failed to admin administrator."});
+    res.status(400).send({message: "Failed to register administrator."});
     console.log(error);
   }
 });
@@ -25,14 +25,29 @@ router.get('/login', (req, res) => {
   res.render("login.pug");
 });
 router.post("/login", passport.authenticate("local", 
-{faiureRedirect:"/api/login",}),
+{faiureRedirect:"/api/login"}),
 (req,res) => {
   req.session.user = req.user
   let loggedInUser = req.session.user.firstname
   console.log(loggedInUser)
-  res.redirect("dash")
+  if(req.session.user.section === "parking"){
+    res.redirect("/api/dash")
+  } 
+  if(req.session.user.section === "battery"){
+    res.redirect("/api/batteryDash")
+  }
+  if(req.session.user.section === "tireclinic"){
+    res.redirect("/api/tyreDash")
+  }
+  // res.redirect("dash")
 }
 );
+
+router.get("/logout", (req, res) => {
+  req.session.destroy(()=>{res.redirect("/api/login")});
+  console.log("You have logged out");
+});
+
 
 
 

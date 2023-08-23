@@ -29,6 +29,10 @@ const carSchema = new mongoose.Schema({
   slotnumber: {
     type: String,
   },
+  cost: {
+    type: String,
+    enum: ['2000', '3000', '5000']
+  },
 
 });
 

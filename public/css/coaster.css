@@ -15,3 +15,10 @@ body{
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+.slot{
+  font-weight: bold;
+}
+
+.time{
+  font-weight: bold;
+}

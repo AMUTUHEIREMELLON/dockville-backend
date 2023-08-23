@@ -1,13 +1,11 @@
 const express = require("express");
 const Car = require("../models/carModel");
 
-const router =express.Router();
+const router = express.Router();
 
-
-router.get("/car",(req, res) =>{
+router.get("/car", (req, res) => {
   res.render("car.pug");
 });
-
 
 router.post("/regcar", async (req, res) => {
   try {
@@ -25,11 +23,8 @@ router.get("/carlist", async (req, res) => {
   try {
     let items = await Car.find();
     const carCount = await Car.countDocuments();
-  
 
-
-
-    res.render("carlist.pug", { cars: items, carCount});
+    res.render("carlist.pug", { cars: items, carCount });
   } catch (error) {
     console.log(error);
     return res.status(400).send({ message: "Sorry could not get cars" });
@@ -52,7 +47,7 @@ router.get("/car/edit/:id", async (req, res) => {
     const car1 = await Car.findOne({
       _id: req.params.id,
     });
-    res.render("editcar", {car: car1});
+    res.render("editcar", { car: car1 });
   } catch (error) {
     res.status(400).send("Couldn't find car in database");
     console.log(error);
@@ -60,15 +55,13 @@ router.get("/car/edit/:id", async (req, res) => {
 });
 
 router.post("/regcar/edit", async (req, res) => {
-  try{
-    await Car.findOneAndUpdate({_id: req.query.id},req.body);
-    res.redirect("/api/carlist")
-  }
-  catch(error){
+  try {
+    await Car.findOneAndUpdate({ _id: req.query.id }, req.body);
+    res.redirect("/api/carlist");
+  } catch (error) {
     res.status(400).send("Could not find car data");
     console.log(error);
   }
 });
-
 
 module.exports = router;

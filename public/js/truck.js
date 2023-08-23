@@ -95,35 +95,7 @@ const Validate = () => {
       "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
     numberPlate.focus();
     return false;
-  } else if (numberPlate.value.length < 6) {
-    numberPlate.style.border = "1px solid red";
-    numberPlateError.textContent =
-      "Number plate should not be more than 6 characters";
-    numberPlateError.style = "color: red; fontsize:11px; font-size:";
-    numberPlate.focus();
-    return false;
-  } else {
-    numberPlate.style.border = "2px solid green";
-    numberPlateError.textContent = "";
-    color.focus();
   }
-  // let numberPlateRegex = ^[A-Z]{3}\s[0-9A-Z]{4}$;
-
-  // let numberPlateRegex = ^[A-Z]{3}\s\d{3}$;
-
-  // let numberPlateRegex = /^[A-Z]{2}[ -]\d{3}[ -][A-Z]{3}$/;
-
-  // let numberPlateRegex = ^[A-Z]{3}\s\d{3}[DE]$;
-  // let numberPlateRegex = /^[A-Z]{2,3}\s\d{2,3}$/;
-  // let numberPlateRegex = ^U([A-Z0-9]{6})+$
-  // if (!numberPlate.value.match(numberPlateRegex)) {
-  //   numberPlate.style.border = "2px solid red";
-  //   numberPlateError.textContent = "Please provide a valid car number plate";
-  //   numberPlateError.style =
-  //     "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
-  //   numberPlate.focus();
-  //   return false;
-  // }
 
   if (color.value == "") {
     color.style.border = "2px solid red";
@@ -140,6 +112,18 @@ const Validate = () => {
     color.focus();
     return false;
   } else {
+    let numberPlateRegex = /^U[A-Za-z0-9]{1,5}$/;
+    if (!numberPlate.value.match(numberPlateRegex)) {
+      numberPlate.style.border = "1px solid red";
+      numberPlateError.textContent = "Number plate should be valid.";
+      numberPlateError.style = "color: red; fontsize:11px; font-size:";
+      numberPlate.focus();
+      return false;
+    } else {
+      numberPlate.style.border = "2px solid green";
+      numberPlateError.textContent = "";
+      color.focus();
+    }
     color.style.border = "2px solid green";
     colorError.textContent = "";
     date.focus();
@@ -165,12 +149,10 @@ const Validate = () => {
       "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
     time.focus();
     return false;
-
-  }else{
+  } else {
     time.style.border = "2px solid green";
     timeError.textContent = "";
     slotnumber.focus();
-
   }
 
   if (slotnumber.value == "") {

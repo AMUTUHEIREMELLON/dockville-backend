@@ -1,43 +1,13 @@
 doctype html
 head
-  link(rel='stylesheet' href='./public/css/bootstrap.css')
-  link(rel='stylesheet' href='./public/css/taxi.css')
+  link(rel='stylesheet' href='/css/bootstrap.css')
+  link(rel='stylesheet' href='/css/taxi.css')
   link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css')
   title Booking Form
-  h1(style='color: aqua') DOCKVILLE DAY AND NIGHT PARKING
-  nav.navbar.navbar-expand-lg.bg-body-tertiary
-    .container-fluid
-      a.navbar-brand(href='#') Navbar
-      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-        span.navbar-toggler-icon
-      #navbarSupportedContent.collapse.navbar-collapse
-        ul.navbar-nav.me-auto.mb-2.mb-lg-0
-          li.nav-item
-            a.nav-link.active(aria-current='page' href='index.html') Home
-          //
-            <li class="nav-item">
-            <a class="nav-link" href="#">About us</a>
-            </li>
-          li.nav-item.dropdown
-            a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-              | Sections
-            ul.dropdown-menu
-              li
-                a.dropdown-item(href='login.html') Parking
-              li
-                a.dropdown-item(href='#') Tire clinic
-              li
-                hr.dropdown-divider
-              li
-                a.dropdown-item(href='#') Battery
-        form.d-flex(role='search')
-          input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
-          button.btn.btn-outline-success(type='submit')
-            | Search
+  
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  h2 Customer&apos;s details
-form#formId(name='taxi' action='#' onsubmit='return Validate()' method='POST')
+form#formId(name='taxi' action='/api/regtaxi' onsubmit='return Validate()' method='POST')
   .booking
     h3 Taxis
     .row
@@ -51,15 +21,15 @@ form#formId(name='taxi' action='#' onsubmit='return Validate()' method='POST')
       label#inputGroup-sizing-sm.model(for='model') Car Model
       span#modelError
       input#model.form-control(type='text' name='model')
-    .car-number
+    .time
       span#numberPlateError
       label#ingroup-sizing.p-(for='numberplate') Car Number Plate
       input#numberplate.form-control(type='text' name='numberplate')
-    .car-color
+    .slot
       span#colorError
       label#ingroup-sizing.p- Car Color
       input#color.form-control(type='text' name='color')
-    .date
+    .slot
       span#dateError
       label#ingroupsizing.date Date
       input#date.form-control(type='date' name='date')
@@ -71,11 +41,14 @@ form#formId(name='taxi' action='#' onsubmit='return Validate()' method='POST')
       span#slotnumberError
       label#slot-sizing.date Slot Number
       input#slotnumber.form-control(type='number' name='slotnumber')
+    br
+    select.form-select(aria-label='Default select example' name='cost') 
+      option(selected='') Select Cost 
+      option(value='2000') 2000
+      option(value='3000') 3000
+      option(value='5000') 5000
+    br
     button(type='submit' onsubmit='services.html') Sign Up
-    //
-      <div class="form-group">
-      <label for="national-id">National ID Number:</label>
-      <input type="text" id="national-id" name="national-id" />
-      </div>
-script(src='./public/js/taxi.js')
+    
+script(src='/js/taxi.js')
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js')

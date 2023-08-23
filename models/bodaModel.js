@@ -11,7 +11,7 @@ const bodaSchema = new mongoose.Schema({
     required: true,
   },
   date:{
-    type: Date,
+    type: String,
   },
   time:{
     type: String,
@@ -21,6 +21,10 @@ const bodaSchema = new mongoose.Schema({
   },
   nin: {
     type: String,
+  },
+  cost: {
+    type: String,
+    enum: ['2000', '3000', '5000']
   }
 });
 

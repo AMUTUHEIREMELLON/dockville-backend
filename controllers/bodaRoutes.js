@@ -8,7 +8,6 @@ router.get("/boda", (req, res) => {
   res.render("boda.pug");
 });
 
-
 router.post("/regboda", async (req, res) => {
   try {
     const boda = new Boda(req.body);
@@ -45,7 +44,7 @@ router.get("/boda/edit/:id", async (req, res) => {
     const emp = await Boda.findOne({
       _id: req.params.id,
     });
-    res.render("editboda", {boda: emp});
+    res.render("editboda", { boda: emp });
   } catch (error) {
     res.status(400).send("Couldn't find boda in database");
     console.log(error);
@@ -53,15 +52,13 @@ router.get("/boda/edit/:id", async (req, res) => {
 });
 
 router.post("/regboda/edit", async (req, res) => {
-  try{
-    await Boda.findOneAndUpdate({_id: req.query.id},req.body);
-    res.redirect("/api/list")
-  }
-  catch(error){
+  try {
+    await Boda.findOneAndUpdate({ _id: req.query.id }, req.body);
+    res.redirect("/api/list");
+  } catch (error) {
     res.status(400).send("Could not find boda data");
     console.log(error);
   }
 });
-
 
 module.exports = router;
